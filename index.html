@@ -1,48 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emine Akbucak - Photo Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emine Akbucak - Photo Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-    <div class="layout">
-        <aside class="sidebar">
-            <div class="logo" onclick="showPage('home')">Emine Akbucak</div>
-            <nav class="menu">
-                <a href="#bio" id="link-bio" onclick="showPage('bio')">Bibliography</a>
-                <a href="#collection1" id="link-collection1" onclick="showPage('collection1')">Su</a>
-                <a href="#collection2" id="link-collection2" onclick="showPage('collection2')">Yansımalar</a>
-            </nav>
-        </aside>
-        <main class="main-content">
-            <section id="home" class="page">
-                <p>Emine Akbucak’ın sanatı, insanlık, doğa ve ışık ile zamanın görünmeyen güçleri arasında bir diyalogdur. Fotoğraf, film ve tiyatro aracılığıyla, hem çevresel gerçeklikleri hem de formun soyut güzelliğini keşfeden derin duygusal ve görsel olarak etkileyici anlatılar örer. Sanatı, güçlü bir manifesto niteliği taşıyan Kıyıya Vuranlar serisi gibi acil, performatif yorumlarla; Işık-Zaman-Mekan projesinde görülen mimari ve şeffaflık üzerine dingin, biçimsel araştırmalar arasında zarifçe hareket eder. Emine’nin çalışmaları hem kişisel hem de kolektiftir: derin bir ekolojik bilinç, ışığın mekânı şekillendiren etkisine duyulan hayranlık ve disiplinler arası işbirliğine adanmışlık yansıtır. İster aktivist hareketleri belgeleyerek, ister samimi kısa filmler yöneterek, ister sahne için ışık tasarımı yaparak olsun, eserleri doğayı insanlığın bir yansıması olarak gören duyarlı ve sorgulayıcı bir ruhla birbirine bağlanır.</p>
-            </section>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo" onclick="showPage('home')">Emine Akbucak</div>
+      <nav class="menu">
+        <a href="#bio" id="link-bio" onclick="showPage('bio')">Bibliography</a>
+        <a href="#collection1" id="link-collection1" onclick="showPage('collection1')">Su</a>
+        <a href="#collection2" id="link-collection2" onclick="showPage('collection2')">Yansımalar</a>
+      </nav>
+    </aside>
 
-            <section id="bio" class="page" style="display:none">
-                <p><strong>EMİNE AKBUCAK</strong></p>
-                <p>1975 yılında Yozgat, Türkiye’de doğdu. Marmara Üniversitesi Radyo TV Sinema Bölümünü bitirdi ve Şahika Tekand Stüdyo Oyuncuları'nda tiyatro eğitimi aldı. 2004 yılında ilk kez fotoğrafla tanışan sanatçı, fotoğraf çalışmalarına İstanbul’da devam etmektedir.</p>
-                <p><strong>Kişisel Sergiler</strong><br> ... </p> <!-- shortened for clarity, your full text stays -->
-            </section>
+    <main class="main-content">
+      <section id="home" class="page">
+        <p>Emine Akbucak’ın sanatı, insanlık, doğa ve ışık ile zamanın görünmeyen güçleri arasında bir diyalogdur. Fotoğraf, film ve tiyatro aracılığıyla, hem çevresel gerçeklikleri hem de formun soyut güzelliğini keşfeden derin duygusal ve görsel olarak etkileyici anlatılar örer. Sanatı, güçlü bir manifesto niteliği taşıyan Kıyıya Vuranlar serisi gibi acil, performatif yorumlarla; Işık-Zaman-Mekan projesinde görülen mimari ve şeffaflık üzerine dingin, biçimsel araştırmalar arasında zarifçe hareket eder. Emine’nin çalışmaları hem kişisel hem de kolektiftir: derin bir ekolojik bilinç, ışığın mekânı şekillendiren etkisine duyulan hayranlık ve disiplinler arası işbirliğine adanmışlık yansıtır. İster aktivist hareketleri belgeleyerek, ister samimi kısa filmler yöneterek, ister sahne için ışık tasarımı yaparak olsun, eserleri doğayı insanlığın bir yansıması olarak gören duyarlı ve sorgulayıcı bir ruhla birbirine bağlanır.</p>
+      </section>
 
-            <section id="collection1" class="page" style="display:none">
-                <h2>Su</h2>
-                <div class="gallery" id="gallery1"></div>
-            </section>
+      <section id="bio" class="page" style="display:none">
+        <p><strong>EMİNE AKBUCAK</strong></p>
+        <p>1975 yılında Yozgat, Türkiye’de doğdu. Marmara Üniversitesi Radyo TV Sinema Bölümünü bitirdi ve Şahika Tekand Stüdyo Oyuncuları'nda tiyatro eğitimi aldı. 2004 yılında ilk kez fotoğrafla tanışan sanatçı, fotoğraf çalışmalarına İstanbul’da devam etmektedir.</p>
 
-            <section id="collection2" class="page" style="display:none">
-                <h2>Yansımalar</h2>
-                <div class="gallery" id="gallery2"></div>
-            </section>
+        <p><strong>Kişisel Sergiler</strong><br>
+        2012 - Dioptrics, Galeri Artist Çukurcuma İstanbul, Türkiye<br>
+        2009 - Yansımalar, Cemal Reşit Rey Sergi Sarayı İstanbul, Türkiye<br>
+        2009 - Yansımalar, Fransız Kültür Merkezi İstanbul, Türkiye<br>
+        2008 - Yansımalar, Signature Art Gallery İstanbul, Türkiye</p>
 
-            <footer class="footer">
-                <p>Contact: +90 534 552 02 92 / +33 616 21 56 50 • emineakbucak@hotmail.fr</p>
-                <p>&copy; 2025 Emine Akbucak. All rights reserved.</p>
-            </footer>
-        </main>
-    </div>
+        <p><strong>Karma Sergiler</strong><br>
+        2016 - Dioptrics, Fotoİstanbul, fotoğraf festivali, İstanbul, Türkiye<br>
+        2014 - Dioptrics, Yansımalar, Mixer Galeri, İstanbul, Türkiye<br>
+        2013 - Köprüden Köprüye, Galeri Oda İstanbul, Türkiye<br>
+        2013 - Dioptrics, Cemal Reşit Rey, Türkiye-Kore Çağdaş Sanat Sergisi<br>
+        2012 - Uyanış Anı, Saint Joseph Lisesi, İstanbul, Türkiye<br>
+        2012 - Yansımalar, Marjinart Galeri, İstanbul, Türkiye<br>
+        2012 - Çevre ve İnsan, Terra Di Sud, Bari, İtalya<br>
+        2011 - Çocuk Var, Marsilya, Fransa<br>
+        2011 - Üç Kadın Üç Profil, İstanbul, Türkiye<br>
+        2011 - Yansımalar, 21 Sanatevi, İstanbul, Türkiye<br>
+        2011 - 1 kHz, Terra Di Sud, Bari, İtalya<br>
+        2010 - Yansımalar, Çankaya Çağdaş Sanatlar Merkezi Ankara, Türkiye</p>
+
+        <p><strong>Filmografi</strong><br>
+        2017 - Tutulma, kısa film (15’)<br>
+        2011 - 1 kHz, video-art (2’30”)<br>
+        2011 - Kızkardeşimin Düğünü, belgesel film (90’)<br>
+        2007 - Küçük Adam, kısa film (6’)</p>
+
+        <p><strong>Basın-Yayın</strong><br>
+        2014 - Köprüden Köprüye, e-dergi Fotografya<br>
+        2013 - Dioptrics, Kore-Türkiye Çağdaş Sanat Değişimi Sergi Kataloğu<br>
+        2013 - Dioptrics N°2, That Magazine dergisi<br>
+        2011 - 3 Femmes 3 Profiles, 1. İstanbul Yaz Sergisi Kataloğu</p>
+      </section>
+
+      <section id="collection1" class="page" style="display:none">
+        <h2>Su</h2>
+        <div class="gallery" id="gallery1"></div>
+      </section>
+
+      <section id="collection2" class="page" style="display:none">
+        <h2>Yansımalar</h2>
+        <div class="gallery" id="gallery2"></div>
+      </section>
+
+      <footer class="footer">
+        <p>Contact: +90 534 552 02 92 / +33 616 21 56 50 • emineakbucak@hotmail.fr</p>
+        <p>&copy; 2025 Emine Akbucak. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

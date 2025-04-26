@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoğraf Portfolyom</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: white; }
+        .header { background-color: white; color: black; padding: 1rem 0; text-align: center; border-bottom: 1px solid #e2e8f0; margin-bottom: 2rem; }
+        .header h1 { font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .header h2 { font-size: 1.25rem; font-weight: normal; }
+        .text-body { max-width: 21cm; margin: 0 auto; padding: 1.5rem 3rem; line-height: 1.7; font-size: 1rem; text-align: justify; }
+        .text-body p { margin-bottom: 1.5em; display: block; width: 100%; text-indent: 0; }
+        .text-body p::first-line { text-indent: 1.5em; display: block; }
+        .text-body strong { font-weight: bold; }
+        .gallery { display: flex; flex-direction: column; align-items: center; gap: 4rem; padding: 1.5rem 3rem; max-width: 21cm; margin: 0 auto; }
+        .gallery img { width: auto; max-width: 100%; height: auto; max-height: 500px; object-fit: contain; border-radius: 0.5rem; cursor: pointer; transition: transform 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .gallery img:hover { transform: scale(1.02); }
+        .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; }
+        .modal img { max-width: 90%; max-height: 90%; border-radius: 0.5rem; box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+        .modal .close-button { position: absolute; top: 1rem; right: 1rem; font-size: 2rem; color: white; cursor: pointer; opacity: 0.7; transition: opacity 0.2s ease; }
+        .modal .close-button:hover { opacity: 1; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>SAYDAM TEFEKKÜR - SU</h1>
+        <h2>Emine Akbucak Fotoğraf Serisi</h2>
+    </header>
+    <main>
+        <section class="text-body">
+            <p>Bu fotoğraf serisi, Şems-i Tebrizi’nin sade ama çok katmanlı çağrısına kulak veriyor: “<strong>Suya bak.</strong>” Bu söz, yalnızca bir yüzeye bakmayı değil; yansıyanı, yitip gideni, dalgalananı ve duruluğu aynı anda görmeye bir davettir. Bu sergideki kareler, suyun doğasını olduğu kadar, insanın iç dünyasını da anlamaya çalışan bir tefekkürün izlerini taşır.</p>
+            <p><strong>Saydamlık</strong> bu serinin temel kavramıdır. Ancak burada kastedilen yalnızca optik bir özellik değil, aynı zamanda bir varoluş biçimidir. Tıpkı su gibi… İçindekini gizlemeden gösteren, ama aynı zamanda dalgasıyla, kırılmasıyla, akışıyla hakikati dönüştürerek sunan bir arayıştır bu. Fotoğraflar, sadece doğanın yüzeyini değil, insan ruhunun da derinliklerini yansıtan soyut formlarla izleyiciyi baş başa bırakır.</p>
+            <p>Sanatçı olarak suya yönelmem, yalnızca biçimsel değil, aynı zamanda varoluşsal bir araştırmadır. Çünkü su, yaşamın ilk ve vazgeçilmez kaynağıdır; evrendeki her şeyin başlangıcında onun izi vardır. Bu nedenle, fotoğraflarla suya bakmak, aynı zamanda hayata, varoluşa ve yaratılışın özüne bakmak anlamına gelir. Suyun taşıdığı hayat verici nitelik ile onun <strong>saydamlık</strong> metaforu arasında gidip gelen bu görsel anlatı, bir ruhsal arayışı da içinde barındırır.</p>
+            <p>Modern dünyanın gürültüsünde <strong>saydamlığı</strong>, sadeliği ve içe dönüşü kaybeden insan için bu seri, bir duruş önerisi olabilir: İçi dışı bir olmak. Sahici bir varoluşa alan açmak. Görünün ötesine bakmak. Tıpkı bir su birikintisinin içinde gökyüzünü görmeye çalışmak gibi.</p>
+        </section>
+        <section class="gallery"></section>
+        <div class="modal">
+            <span class="close-button">&times;</span>
+            <img src="" alt="">
+        </div>
+    </main>
+    <script>
+        const gallerySection = document.querySelector('.gallery');
+        const modal = document.querySelector('.modal');
+        const modalImg = document.querySelector('.modal img');
+        const closeButton = document.querySelector('.close-button');
+
+        const imageUrls = [
+            "https://example.com/image1.jpg",
+            "https://example.com/image2.jpg",
+            "https://example.com/image3.jpg",
+            // ... up to 30 images
+        ];
+
+        function generateGallery() {
+            imageUrls.forEach((url, index) => {
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = `Fotoğraf ${index + 1}`;
+                img.addEventListener('click', () => {
+                    openModal(url);
+                });
+                gallerySection.appendChild(img);
+            });
+        }
+
+        function openModal(url) {
+            modalImg.src = url;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        closeButton.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        generateGallery();
+    </script>
+</body>
+</html>

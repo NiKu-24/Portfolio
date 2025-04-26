@@ -1,13 +1,13 @@
 const gallery1Images = [
-    "./collections/Collection1/photo1.jpg",
-    "./collections/Collection1/photo2.jpg",
-    "./collections/Collection1/photo3.jpg"
+    "./collections/Su/photo1.jpg",
+    "./collections/Su/photo2.jpg",
+    "./collections/Su/photo3.jpg"
 ];
 
 const gallery2Images = [
-    "./collections/Collection2/photo1.jpg",
-    "./collections/Collection2/photo2.jpg",
-    "./collections/Collection2/photo3.jpg"
+    "./collections/Yansimalar/photo1.jpg",
+    "./collections/Yansimalar/photo2.jpg",
+    "./collections/Yansimalar/photo3.jpg"
 ];
 
 function generateGallery(id, images) {
@@ -39,5 +39,4 @@ function showPage(pageId) {
     }
 }
 
-// Default show home
 showPage('home');

@@ -1,62 +1,61 @@
 const gallery1Images = [
-  "./collections/Su/Barselona1.jpg",
-  "./collections/Su/Barselona12.jpg",
-  "./collections/Su/Barselona3.jpg",
-  "./collections/Su/Barselona4.jpg",
-  "./collections/Su/Barselona6.jpg",
-  "./collections/Su/Barselona9.jpg",
-  "./collections/Su/Fethiye_3558A.jpg",
-  "./collections/Su/RHIN_0612.jpg",
-  "./collections/Su/RHIN_0616.jpg",
-  "./collections/Su/RHIN_0681.jpg",
-  "./collections/Su/RHIN_0691.jpg",
-  "./collections/Su/RHIN_0699.jpg",
-  "./collections/Su/RHIN_0734.jpg",
-  "./collections/Su/RHIN_0737.jpg",
-  "./collections/Su/RHIN_0738.jpg",
-  "./collections/Su/RHIN_0740A.jpg",
-  "./collections/Su/RHIN_0768.jpg",
-  "./collections/Su/RHIN_0789.jpg",
-  "./collections/Su/Tayland_9130.jpg",
-  "./collections/Su/Tayland_9155.jpg",
-  "./collections/Su/Tayland_9615.jpg",
-  "./collections/Su/Tayland_9654.jpg",
-  "./collections/Su/Vize1.jpg",
-  "./collections/Su/Vize11.jpg",
-  "./collections/Su/Vize3.jpg",
-  "./collections/Su/Vize4.jpg",
-  "./collections/Su/Vize6.jpg",
-  "./collections/Su/Vize7.jpg",
-  "./collections/Su/Vize9.jpg",
-  "./collections/Su/Yildizkoy_7641C.jpg"
+  { thumb: "./collections/Su/Thumbnail/Barselona1.jpg", full: "./collections/Su/Barselona1.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Barselona12.jpg", full: "./collections/Su/Barselona12.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Barselona3.jpg", full: "./collections/Su/Barselona3.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Barselona4.jpg", full: "./collections/Su/Barselona4.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Barselona6.jpg", full: "./collections/Su/Barselona6.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Barselona9.jpg", full: "./collections/Su/Barselona9.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Fethiye_3558A.jpg", full: "./collections/Su/Fethiye_3558A.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0612.jpg", full: "./collections/Su/RHIN_0612.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0616.jpg", full: "./collections/Su/RHIN_0616.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0681.jpg", full: "./collections/Su/RHIN_0681.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0691.jpg", full: "./collections/Su/RHIN_0691.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0699.jpg", full: "./collections/Su/RHIN_0699.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0734.jpg", full: "./collections/Su/RHIN_0734.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0737.jpg", full: "./collections/Su/RHIN_0737.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0738.jpg", full: "./collections/Su/RHIN_0738.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0740A.jpg", full: "./collections/Su/RHIN_0740A.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0768.jpg", full: "./collections/Su/RHIN_0768.jpg" },
+  { thumb: "./collections/Su/Thumbnail/RHIN_0789.jpg", full: "./collections/Su/RHIN_0789.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Tayland_9130.jpg", full: "./collections/Su/Tayland_9130.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Tayland_9155.jpg", full: "./collections/Su/Tayland_9155.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Tayland_9615.jpg", full: "./collections/Su/Tayland_9615.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Tayland_9654.jpg", full: "./collections/Su/Tayland_9654.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Vize1.jpg", full: "./collections/Su/Vize1.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Vize11.jpg", full: "./collections/Su/Vize11.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Vize3.jpg", full: "./collections/Su/Vize3.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Vize4.jpg", full: "./collections/Su/Vize4.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Vize6.jpg", full: "./collections/Su/Vize6.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Vize7.jpg", full: "./collections/Su/Vize7.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Vize9.jpg", full: "./collections/Su/Vize9.jpg" },
+  { thumb: "./collections/Su/Thumbnail/Yildizkoy_7641C.jpg", full: "./collections/Su/Yildizkoy_7641C.jpg" }
 ];
 
 const gallery2Images = [
-  "./collections/Yansimalar/Yansimalar01.jpg",
-  "./collections/Yansimalar/Yansimalar02.jpg",
-  "./collections/Yansimalar/Yansimalar03.jpg",
-  "./collections/Yansimalar/Yansimalar04.jpg",
-  "./collections/Yansimalar/Yansimalar05.jpg",
-  "./collections/Yansimalar/Yansimalar06.jpg",
-  "./collections/Yansimalar/Yansimalar07.jpg",
-  "./collections/Yansimalar/Yansimalar08.jpg",
-  "./collections/Yansimalar/Yansimalar09.jpg",
-  "./collections/Yansimalar/Yansimalar10.jpg"
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar01.jpg", full: "./collections/Yansimalar/Yansimalar01.jpg" },
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar02.jpg", full: "./collections/Yansimalar/Yansimalar02.jpg" },
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar03.jpg", full: "./collections/Yansimalar/Yansimalar03.jpg" },
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar04.jpg", full: "./collections/Yansimalar/Yansimalar04.jpg" },
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar05.jpg", full: "./collections/Yansimalar/Yansimalar05.jpg" },
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar06.jpg", full: "./collections/Yansimalar/Yansimalar06.jpg" },
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar07.jpg", full: "./collections/Yansimalar/Yansimalar07.jpg" },
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar08.jpg", full: "./collections/Yansimalar/Yansimalar08.jpg" },
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar09.jpg", full: "./collections/Yansimalar/Yansimalar09.jpg" },
+  { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar10.jpg", full: "./collections/Yansimalar/Yansimalar10.jpg" }
 ];
 
 function generateGallery(id, images) {
     const container = document.getElementById(id);
     container.innerHTML = '';
-    images.forEach(url => {
-        const img = document.createElement('img');
-        img.src = url;
-        img.alt = "Portfolio Image";
-        container.appendChild(img);
+    images.forEach(img => {
+        const image = document.createElement('img');
+        image.src = img.thumb;
+        image.alt = "Thumbnail";
+        image.classList.add('thumbnail');
+        image.onclick = () => openModal(img.full);
+        container.appendChild(image);
     });
 }
-
-generateGallery('gallery1', gallery1Images);
-generateGallery('gallery2', gallery2Images);
 
 function showPage(pageId) {
     document.querySelectorAll('.page').forEach(page => {
@@ -73,4 +72,19 @@ function showPage(pageId) {
     }
 }
 
+function openModal(imageUrl) {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    modalImg.src = imageUrl;
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = "none";
+}
+
+// Initialize
+generateGallery('gallery1', gallery1Images);
+generateGallery('gallery2', gallery2Images);
 showPage('home');

@@ -104,6 +104,17 @@ p {
     max-height: 700px;
 }
 
+.gallery img.thumbnail {
+    cursor: pointer;
+    transition: transform 0.2s;
+    max-width: 300px;
+    height: auto;
+}
+
+.gallery img.thumbnail:hover {
+    transform: scale(1.05);
+}
+
 .footer {
     margin-top: 5rem;
     text-align: center;

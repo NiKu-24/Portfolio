@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emine Akbucak - Photo Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="logo">Emine Akbucak</div>
+            <nav class="menu">
+                <a href="#home" id="link-home" onclick="showPage('home')">Home</a>
+                <a href="#bio" id="link-bio" onclick="showPage('bio')">Bio & Contact</a>
+                <a href="#collection1" id="link-collection1" onclick="showPage('collection1')">Saydam Tefekkür - Su</a>
+                <a href="#collection2" id="link-collection2" onclick="showPage('collection2')">Saydam Tefekkür - Yansımalar</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <section id="home" class="page">
+                <h2>Welcome</h2>
+                <p>Welcome to the official photography portfolio of Emine Akbucak. Through my lens, I explore the delicate balance between light, transparency, and reflection, inspired by the timeless whispers of water.</p>
+            </section>
+
+            <section id="bio" class="page" style="display:none">
+                <h2>Biography & Contact</h2>
+                <p>Emine Akbucak is a contemporary photographer based in Europe, focusing on the intersection of nature and spirit. <br><br> Contact: emine@example.com</p>
+            </section>
+
+            <section id="collection1" class="page" style="display:none">
+                <h2>Saydam Tefekkür - Su</h2>
+                <div class="gallery" id="gallery1"></div>
+            </section>
+
+            <section id="collection2" class="page" style="display:none">
+                <h2>Saydam Tefekkür - Yansımalar</h2>
+                <div class="gallery" id="gallery2"></div>
+            </section>
+
+            <footer class="footer">
+                <p>&copy; 2025 Emine Akbucak. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,27 +1,24 @@
-/* Basic Reset */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
+    background-color: #f5f2ed;
 }
 
-/* Layout */
 .layout {
     display: flex;
     min-height: 100vh;
 }
 
-/* Sidebar */
 .sidebar {
     width: 180px;
-    background-color: #ffffff;
+    background-color: #f5f2ed;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border-right: 1px solid #ddd;
+    align-items: flex-start;
+    border-right: 1px solid #dcd7d0;
 }
 
 .sidebar .logo {
@@ -32,6 +29,7 @@ body, html {
     margin-bottom: 2rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .menu {
@@ -39,21 +37,21 @@ body, html {
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
-    align-items: flex-start; /* <-- Left align */
+    align-items: flex-start;
 }
 
 .menu a {
     text-decoration: none;
     font-size: 13px;
     font-weight: 400;
-    color: #555;
-    text-align: left; /* <-- Left align */
+    color: #5a5249;
+    text-align: left;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     padding: 0.5rem 0;
     transition: color 0.3s;
     width: 100%;
-    padding-left: 0.5rem; /* Little breathing space from left */
+    padding-left: 0.5rem;
 }
 
 .menu a.active {
@@ -65,11 +63,10 @@ body, html {
     color: #888;
 }
 
-/* Main Content */
 .main-content {
     flex-grow: 1;
     padding: 3rem 5rem;
-    background: #ffffff;
+    background: #f5f2ed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,25 +82,14 @@ body, html {
     display: block;
 }
 
-.page h2 {
-    font-weight: 400;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #222;
-}
-
-.page p {
+p {
     font-size: 15px;
     line-height: 1.8;
-    color: #444;
+    color: #5a5249;
     margin-bottom: 2rem;
     text-align: justify;
 }
 
-/* Gallery */
 .gallery {
     display: flex;
     flex-direction: column;
@@ -118,11 +104,12 @@ body, html {
     max-height: 700px;
 }
 
-/* Footer */
 .footer {
     margin-top: 5rem;
     text-align: center;
     font-size: 0.8rem;
-    color: #aaa;
+    color: #5a5249;
     padding-top: 2rem;
+    border-top: 1px solid #dcd7d0;
+    background-color: #f5f2ed;
 }

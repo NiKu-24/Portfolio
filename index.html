@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emine Akbucak - Photo Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/script.js"></script>
 </head>
 <body>
   <div class="layout">
@@ -77,6 +76,70 @@
     </main>
   </div>
 
-  <script src="js/script.js"></script>
+  <!-- Modal Popup for full images -->
+  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000;" onclick="closeModal()">
+    <img id="modal-img" style="max-width:90%; max-height:90%;" alt="Full Image">
+  </div>
+
+  <!-- Full Updated JavaScript -->
+  <script>
+const gallery1Images = [
+    { thumb: "./collections/Su/thumbnail/Barselona1.jpg", full: "./collections/Su/Barselona1.jpg" },
+    { thumb: "./collections/Su/thumbnail/Barselona3.jpg", full: "./collections/Su/Barselona3.jpg" },
+    // ADD all Su images here
+];
+
+const gallery2Images = [
+    { thumb: "./collections/Yansimalar/thumbnail/Yansimalar01.jpg", full: "./collections/Yansimalar/Yansimalar01.jpg" },
+    { thumb: "./collections/Yansimalar/thumbnail/Yansimalar02.jpg", full: "./collections/Yansimalar/Yansimalar02.jpg" },
+    // ADD all Yansimalar images here
+];
+
+function generateGallery(id, images) {
+    const container = document.getElementById(id);
+    container.innerHTML = '';
+    images.forEach(img => {
+        const image = document.createElement('img');
+        image.src = img.thumb;
+        image.alt = "Thumbnail";
+        image.classList.add('thumbnail');
+        image.onclick = () => openModal(img.full);
+        container.appendChild(image);
+    });
+}
+
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => {
+        page.style.display = 'none';
+    });
+    document.getElementById(pageId).style.display = 'block';
+
+    document.querySelectorAll('.menu a').forEach(link => {
+        link.classList.remove('active');
+    });
+    const activeLink = document.getElementById('link-' + pageId);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+}
+
+function openModal(imageUrl) {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    modalImg.src = imageUrl;
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = "none";
+}
+
+// Initialize
+generateGallery('gallery1', gallery1Images);
+generateGallery('gallery2', gallery2Images);
+showPage('home');
+  </script>
+
 </body>
 </html>

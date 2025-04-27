@@ -1,3 +1,4 @@
+// Gallery image lists
 const gallery1Images = [
   { thumb: "./collections/Su/Thumbnail/Barselona1.jpg", full: "./collections/Su/Barselona1.jpg" },
   { thumb: "./collections/Su/Thumbnail/Barselona12.jpg", full: "./collections/Su/Barselona12.jpg" },
@@ -44,70 +45,72 @@ const gallery2Images = [
   { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar10.jpg", full: "./collections/Yansimalar/Yansimalar10.jpg" }
 ];
 
+// Modal functionality
 let currentGallery = [];
 let currentIndex = 0;
 
 function generateGallery(id, images) {
-    const container = document.getElementById(id);
-    container.innerHTML = '';
-    images.forEach((img, index) => {
-        const image = document.createElement('img');
-        image.src = img.thumb;
-        image.alt = "Thumbnail";
-        image.classList.add('thumbnail');
-        image.onclick = () => openModal(img.full, images, index);
-        container.appendChild(image);
-    });
+  const container = document.getElementById(id);
+  container.innerHTML = '';
+  images.forEach((img, index) => {
+    const image = document.createElement('img');
+    image.src = img.thumb;
+    image.alt = "Thumbnail";
+    image.classList.add('thumbnail');
+    image.onclick = () => openModal(img.full, images, index);
+    container.appendChild(image);
+  });
 }
 
 function openModal(imageUrl, galleryImages, index) {
-    currentGallery = galleryImages;
-    currentIndex = index;
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    modalImg.src = imageUrl;
-    modal.style.display = "flex";
+  currentGallery = galleryImages;
+  currentIndex = index;
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  modalImg.src = imageUrl;
+  modal.style.display = "flex";
 }
 
 function closeModal() {
-    const modal = document.getElementById('modal');
-    modal.style.display = "none";
+  const modal = document.getElementById('modal');
+  modal.style.display = "none";
 }
 
 function showImage(index) {
-    if (index >= 0 && index < currentGallery.length) {
-        currentIndex = index;
-        const modalImg = document.getElementById('modal-img');
-        modalImg.src = currentGallery[currentIndex].full;
-    }
+  if (index >= 0 && index < currentGallery.length) {
+    currentIndex = index;
+    const modalImg = document.getElementById('modal-img');
+    modalImg.src = currentGallery[currentIndex].full;
+  }
 }
 
 document.getElementById('prevBtn').onclick = (e) => {
-    e.stopPropagation();
-    showImage(currentIndex - 1);
+  e.stopPropagation();
+  showImage(currentIndex - 1);
 };
 
 document.getElementById('nextBtn').onclick = (e) => {
-    e.stopPropagation();
-    showImage(currentIndex + 1);
+  e.stopPropagation();
+  showImage(currentIndex + 1);
 };
 
+// Menu page switching
 function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(page => {
-        page.style.display = 'none';
-    });
-    document.getElementById(pageId).style.display = 'block';
+  document.querySelectorAll('.page').forEach(page => {
+    page.style.display = 'none';
+  });
+  document.getElementById(pageId).style.display = 'block';
 
-    document.querySelectorAll('.menu a').forEach(link => {
-        link.classList.remove('active');
-    });
-    const activeLink = document.getElementById('link-' + pageId);
-    if (activeLink) {
-        activeLink.classList.add('active');
-    }
+  document.querySelectorAll('.menu a').forEach(link => {
+    link.classList.remove('active');
+  });
+  const activeLink = document.getElementById('link-' + pageId);
+  if (activeLink) {
+    activeLink.classList.add('active');
+  }
 }
 
-// Initialize galleries and page
+// Initialize galleries and default page
 generateGallery('gallery1', gallery1Images);
 generateGallery('gallery2', gallery2Images);
 showPage('home');

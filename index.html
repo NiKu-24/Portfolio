@@ -92,11 +92,16 @@
 
   <!-- Modal Popup -->
   <div id="modal" onclick="closeModal()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(245,242,237,0.9); justify-content:center; align-items:center; z-index:1000; flex-direction:column;">
-    <button id="closeBtn" onclick="closeModal()" style="position:absolute; top:20px; right:20px; font-size:2rem; background:none; border:none; cursor:pointer;">&#10005;</button>
-    <button id="prevBtn" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); font-size:2rem; background:none; border:none; cursor:pointer;">&#8249;</button>
-    <img id="modal-img" style="max-width:90%; max-height:90%;" alt="Full Image">
-    <button id="nextBtn" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); font-size:2rem; background:none; border:none; cursor:pointer;">&#8250;</button>
-  </div>
+  <button id="closeBtn" onclick="closeModal()" 
+  style="position:absolute; top:20px; right:20px; font-size:1.5rem; color:#666; background:none; border:none; cursor:pointer; opacity:0.7; transition:opacity 0.3s;" 
+  onmouseover="this.style.opacity=1" 
+  onmouseout="this.style.opacity=0.7">
+  &#10005;
+  </button>
+  <button id="prevBtn" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); font-size:2rem; background:none; border:none; cursor:pointer;">&#8249;</button>
+  <img id="modal-img" style="max-width:90%; max-height:90%;" alt="Full Image">
+  <button id="nextBtn" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); font-size:2rem; background:none; border:none; cursor:pointer;">&#8250;</button>
+</div>
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>

@@ -47,32 +47,22 @@ const gallery2Images = [
 function generateGallery(id, images) {
     const container = document.getElementById(id);
     container.innerHTML = '';
-    images.forEach(img => {
+    images.forEach((img, index) => {
         const image = document.createElement('img');
         image.src = img.thumb;
         image.alt = "Thumbnail";
         image.classList.add('thumbnail');
-        image.onclick = () => openModal(img.full);
+        image.onclick = () => openModal(img.full, images, index);
         container.appendChild(image);
     });
 }
 
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(page => {
-        page.style.display = 'none';
-    });
-    document.getElementById(pageId).style.display = 'block';
+let currentGallery = [];
+let currentIndex = 0;
 
-    document.querySelectorAll('.menu a').forEach(link => {
-        link.classList.remove('active');
-    });
-    const activeLink = document.getElementById('link-' + pageId);
-    if (activeLink) {
-        activeLink.classList.add('active');
-    }
-}
-
-function openModal(imageUrl) {
+function openModal(imageUrl, galleryImages, index) {
+    currentGallery = galleryImages;
+    currentIndex = index;
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
     modalImg.src = imageUrl;
@@ -83,6 +73,25 @@ function closeModal() {
     const modal = document.getElementById('modal');
     modal.style.display = "none";
 }
+
+function showImage(index) {
+    if (index >= 0 && index < currentGallery.length) {
+        currentIndex = index;
+        const modalImg = document.getElementById('modal-img');
+        modalImg.src = currentGallery[currentIndex].full;
+    }
+}
+
+// Arrow buttons
+document.getElementById('prevBtn').onclick = (e) => {
+    e.stopPropagation();
+    showImage(currentIndex - 1);
+};
+
+document.getElementById('nextBtn').onclick = (e) => {
+    e.stopPropagation();
+    showImage(currentIndex + 1);
+};
 
 // Initialize
 generateGallery('gallery1', gallery1Images);

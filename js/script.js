@@ -69,6 +69,24 @@ function openModal(imageUrl, galleryImages, index) {
     modal.style.display = "flex";
 }
 
+function showImage(index) {
+    if (index >= 0 && index < currentGallery.length) {
+        currentIndex = index;
+        const modalImg = document.getElementById('modal-img');
+        modalImg.src = currentGallery[currentIndex].full;
+    }
+}
+
+document.getElementById('prevBtn').onclick = (e) => {
+    e.stopPropagation();
+    showImage(currentIndex - 1);
+};
+
+document.getElementById('nextBtn').onclick = (e) => {
+    e.stopPropagation();
+    showImage(currentIndex + 1);
+};
+
 function closeModal() {
     const modal = document.getElementById('modal');
     modal.style.display = "none";

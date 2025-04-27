@@ -1,4 +1,3 @@
-// Gallery image lists
 const gallery1Images = [
   { thumb: "./collections/Su/Thumbnail/Barselona1.jpg", full: "./collections/Su/Barselona1.jpg" },
   { thumb: "./collections/Su/Thumbnail/Barselona12.jpg", full: "./collections/Su/Barselona12.jpg" },
@@ -45,56 +44,23 @@ const gallery2Images = [
   { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar10.jpg", full: "./collections/Yansimalar/Yansimalar10.jpg" }
 ];
 
-// Modal functionality
-let currentGallery = [];
+// Navigation and Modal functions
 let currentIndex = 0;
+let currentGallery = [];
 
 function generateGallery(id, images) {
   const container = document.getElementById(id);
   container.innerHTML = '';
-  images.forEach((img, index) => {
+  images.forEach(img => {
     const image = document.createElement('img');
     image.src = img.thumb;
     image.alt = "Thumbnail";
     image.classList.add('thumbnail');
-    image.onclick = () => openModal(img.full, images, index);
+    image.onclick = () => openModal(img.full, images);
     container.appendChild(image);
   });
 }
 
-function openModal(imageUrl, galleryImages, index) {
-  currentGallery = galleryImages;
-  currentIndex = index;
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modal-img');
-  modalImg.src = imageUrl;
-  modal.style.display = "flex";
-}
-
-function closeModal() {
-  const modal = document.getElementById('modal');
-  modal.style.display = "none";
-}
-
-function showImage(index) {
-  if (index >= 0 && index < currentGallery.length) {
-    currentIndex = index;
-    const modalImg = document.getElementById('modal-img');
-    modalImg.src = currentGallery[currentIndex].full;
-  }
-}
-
-document.getElementById('prevBtn').onclick = (e) => {
-  e.stopPropagation();
-  showImage(currentIndex - 1);
-};
-
-document.getElementById('nextBtn').onclick = (e) => {
-  e.stopPropagation();
-  showImage(currentIndex + 1);
-};
-
-// Menu page switching
 function showPage(pageId) {
   document.querySelectorAll('.page').forEach(page => {
     page.style.display = 'none';
@@ -110,7 +76,42 @@ function showPage(pageId) {
   }
 }
 
-// Initialize galleries and default page
+function openModal(imageUrl, gallery) {
+  currentGallery = gallery;
+  currentIndex = gallery.findIndex(img => img.full === imageUrl);
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  modalImg.src = imageUrl;
+  modal.style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = "none";
+}
+
+function showImage(index) {
+  if (index < 0) index = currentGallery.length - 1;
+  if (index >= currentGallery.length) index = 0;
+  currentIndex = index;
+  document.getElementById('modal-img').src = currentGallery[currentIndex].full;
+}
+
+// Arrows and Escape Key
+document.getElementById('prevBtn').addEventListener('click', function(event) {
+  event.stopPropagation();
+  showImage(currentIndex - 1);
+});
+
+document.getElementById('nextBtn').addEventListener('click', function(event) {
+  event.stopPropagation();
+  showImage(currentIndex + 1);
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') closeModal();
+});
+
+// Initialize galleries
 generateGallery('gallery1', gallery1Images);
 generateGallery('gallery2', gallery2Images);
 showPage('home');

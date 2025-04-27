@@ -44,6 +44,9 @@ const gallery2Images = [
   { thumb: "./collections/Yansimalar/Thumbnail/Yansimalar10.jpg", full: "./collections/Yansimalar/Yansimalar10.jpg" }
 ];
 
+let currentGallery = [];
+let currentIndex = 0;
+
 function generateGallery(id, images) {
     const container = document.getElementById(id);
     container.innerHTML = '';
@@ -57,9 +60,6 @@ function generateGallery(id, images) {
     });
 }
 
-let currentGallery = [];
-let currentIndex = 0;
-
 function openModal(imageUrl, galleryImages, index) {
     currentGallery = galleryImages;
     currentIndex = index;
@@ -68,24 +68,6 @@ function openModal(imageUrl, galleryImages, index) {
     modalImg.src = imageUrl;
     modal.style.display = "flex";
 }
-
-function showImage(index) {
-    if (index >= 0 && index < currentGallery.length) {
-        currentIndex = index;
-        const modalImg = document.getElementById('modal-img');
-        modalImg.src = currentGallery[currentIndex].full;
-    }
-}
-
-document.getElementById('prevBtn').onclick = (e) => {
-    e.stopPropagation();
-    showImage(currentIndex - 1);
-};
-
-document.getElementById('nextBtn').onclick = (e) => {
-    e.stopPropagation();
-    showImage(currentIndex + 1);
-};
 
 function closeModal() {
     const modal = document.getElementById('modal');
@@ -100,7 +82,6 @@ function showImage(index) {
     }
 }
 
-// Arrow buttons
 document.getElementById('prevBtn').onclick = (e) => {
     e.stopPropagation();
     showImage(currentIndex - 1);
@@ -111,7 +92,22 @@ document.getElementById('nextBtn').onclick = (e) => {
     showImage(currentIndex + 1);
 };
 
-// Initialize
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => {
+        page.style.display = 'none';
+    });
+    document.getElementById(pageId).style.display = 'block';
+
+    document.querySelectorAll('.menu a').forEach(link => {
+        link.classList.remove('active');
+    });
+    const activeLink = document.getElementById('link-' + pageId);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+}
+
+// Initialize galleries and page
 generateGallery('gallery1', gallery1Images);
 generateGallery('gallery2', gallery2Images);
 showPage('home');

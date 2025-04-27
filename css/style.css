@@ -98,28 +98,27 @@ p {
 
 /* Gallery */
 .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    align-items: center;
-    margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 per row when possible */
+  gap: 20px; /* nice breathing space */
+  justify-items: center; /* center thumbnails */
+  align-items: center;
+  margin-top: 20px;
 }
 
 .gallery img {
-    max-width: 100%;
-    height: auto;
-    max-height: 700px;
+  width: 100%;
+  max-width: 250px; /* smaller thumbnails */
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px; /* soft rounded corners */
+  transition: transform 0.3s, opacity 0.3s;
 }
 
-.gallery img.thumbnail {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    max-width: 300px;
-    height: auto;
-}
-
-.gallery img.thumbnail:hover {
-    transform: scale(1.03);
+.gallery img:hover {
+  transform: scale(1.03); /* small zoom on hover */
+  opacity: 0.9;
 }
 
 /* Footer */
